@@ -279,4 +279,8 @@ async def ask(req: AskRequest):
         return JSONResponse({"answer": answer})
     except Exception as e:
         traceback.print_exc()
+<<<<<<< HEAD
         raise HTTPException(500, f"Q&A error: {e}")
+=======
+        raise HTTPException(500, f"Q&A error: {e}")
+>>>>>>> 6a875aa3dbcf2a06b8389e0760601cb106b8f1f2
