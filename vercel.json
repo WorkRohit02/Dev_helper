@@ -1,7 +1,16 @@
 {
-  "rewrites": [
-    { "source": "/health",  "destination": "/api/index.py" },
-    { "source": "/analyze", "destination": "/api/index.py" },
-    { "source": "/ask",     "destination": "/api/index.py" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "50mb" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
   ]
 }
